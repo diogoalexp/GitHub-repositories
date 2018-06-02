@@ -1,4 +1,29 @@
-﻿.positivo-input {
+﻿.ateliware-portrait{
+    width: 160px;
+    height: 160px;
+    border-color: black;
+    border: dashed;
+}
+
+.ateliware-text-table{
+    font-family: Arial;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: bold;
+    border: groove;
+    border-color: gray;
+}
+
+.ateliware-text {
+    font-family: Arial;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: bold;
+}
+
+
+
+.positivo-input {
     width: 300px;
 }
 

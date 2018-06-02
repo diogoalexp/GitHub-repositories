@@ -1,0 +1,20 @@
+﻿<div class="container">
+    <!-- pager -->
+    <ul ng-if="pager.pages.length" class="pagination justify-content-center">
+        <li ng-class="{'page-item': 1 == 1, disabled:pager.currentPage === 1}">
+            <a class="page-link" ng-click="setPage(1)">Primeiro</a>
+        </li>
+        <li ng-class="{'page-item': 1 == 1, disabled:pager.currentPage === 1}">
+            <a class="page-link" ng-click="setPage(pager.currentPage - 1)">Anterior</a>
+        </li>
+        <li ng-repeat="page in pager.pages" ng-class="{'page-item': 1 == 1, active:pager.currentPage === page}">
+            <a class="page-link" ng-click="setPage(page)">{{page}}</a>
+        </li>
+        <li ng-class="{'page-item': 1 == 1, disabled:pager.currentPage === pager.totalPages}">
+            <a class="page-link" ng-click="setPage(pager.currentPage + 1)">Próximo</a>
+        </li>
+        <li ng-class="{'page-item': 1 == 1, disabled:pager.currentPage === pager.totalPages}">
+            <a class="page-link" ng-click="setPage(pager.totalPages)">Último</a>
+        </li>
+    </ul>
+</div>

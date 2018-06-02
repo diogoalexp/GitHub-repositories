@@ -1,0 +1,64 @@
+﻿<!-- Modal -->
+<div class="modal fade" id="modalImportarSoftwares" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #ee2f39">
+                <h5 class="modal-title" id="exampleModalLabel">Project: {{result.full_name}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="ateliware-text-table">
+                    <table>
+                        <tr>
+                            <td>
+                                <img class="ateliware-portrait" src="{{result.owner.avatar_url}}" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>User:    <a href="{{user.html_url}}">{{user.name}}</a></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>email:    <a href="mailto:{{user.email}}">{{user.email}}</a></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Location:    {{user.location}}</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Blog:    <a href="{{user.blog}}">{{user.blog}}</a></label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="ateliware-text">
+                    <p style="font-size: 20px">Project <a href="{{result.html_url}}">{{result.name}}</a></p>
+                    <label>Language {{result.language}}</label>
+                    <br />
+                    <label>Created: {{result.created_at}}</label>
+                    <br />
+                    <label>Last Update: {{result.updated_at}}</label>
+                    <br />
+                    <br />
+                    <p>{{result.description}}</p>
+
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Fechar</button>                
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Preloader -->
+<loading state=stateCadastro loading-spiner-css="positivo-loading-spiner"></loading>
