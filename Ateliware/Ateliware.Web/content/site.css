@@ -1,0 +1,55 @@
+﻿html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    font-size: 80%;
+    background-color: #F4F7FA;
+}
+
+.content {
+    min-height: 100%;
+    position: relative;
+}
+
+header {
+    background-color: #ee2f39;
+    margin-bottom: 15px;
+}
+
+footer {
+    background-color: #ee2f39;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    clear: both;
+    text-align: center;
+    color: #FFF;
+    font-weight: bold;
+}
+
+h4 {
+    border: 0 solid #fff;
+    border-bottom-width: 1px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.error {
+    border: 1px solid #ced4da;
+    padding: 5px;
+    border-radius: 3px;
+    margin: 7px 0px;
+}
+
+input[type=checkbox],
+input[type=radio] {
+    margin-left: 3px;
+}
+
+li.page-item {
+    cursor: pointer;
+}

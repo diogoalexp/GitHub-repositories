@@ -1,0 +1,20 @@
+﻿<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8" ng-class="{'col-lg-12 col-xl-12': colDoze == 'true'}">
+        <div id="standardInput">
+            <div class="form-group row">
+                <label for="" class="col-md-3">{{label}}</label>
+                <div class="col-md-8 input-group-sm">
+                    <input type="{{type}}"
+                           ng-attr-placeholder="{{placeholder != null?placeholder:label}}"
+                           ng-readonly="readonly"
+                           id="{{id}}"
+                           class="{{customize}}"
+                           ng-model="value"
+                           maxlength="{{maxLength}}"
+                           ng-class="{'positivo-input-invalid': !campoValido }" />
+                    <div ng-show="!campoValido" class="alert-danger"> * Valor não informado ou digitado incorretamente.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

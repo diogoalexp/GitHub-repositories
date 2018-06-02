@@ -13,9 +13,9 @@
             	self.stateLogin = '';
 
             	self.GetFooter = function () {
-            		self.resultadoFooter = { "empresa": empresa, "versao": versao, "ambiente": ambiente };
+                    self.author = author;
             	}
-
+        
             	self.PostLogin = function () {
             		self.errorList.splice(0, self.errorList.length);
             		self.resultadoAPI = null;
