@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <title>Gerenciar Recursos</title>
+    <meta name="description" content="Gerenciador de recursos do Grupo Positivo">
+    <meta name="author" content="Diogo Pereira">
+
+    <link type="image/x-icon" rel="shortcut icon" href="images/favicon.ico">
+    <link href="assets/bootstrap-4.0.0-beta.2-dist/css/bootstrap.min.css" media="all" rel="stylesheet" />
+    <link href="assets/angular-calendar/fullcalendar.min.css" media="all" rel="stylesheet">
+    <link href="content/ateliware.css" media="all" rel="stylesheet" />
+    
+    <script src="assets/angular-1.6.6/angular.min.js"></script>
+    <script src="assets/angular-1.6.6/angular-route.min.js"></script>
+    <script src="assets/angular-1.6.6/angular-animate.min.js"></script>
+    <script src="assets/angular-1.6.6/angular-messages.min.js"></script>
+    <script src="assets/popper-1.12.6.js"></script>
+    <script src="assets/jquery-3.2.1.min.js"></script>
+    <script src="assets/bootstrap-4.0.0-beta.2-dist/js/bootstrap.min.js"></script>
+    <script src="assets/ui-bootstrap-tpls-2.5.0.min.js"></script>
+
+    <script src="assets/moment.min.js"></script>
+    <script src="assets/angular-calendar/fullcalendar.min.js"></script>
+    <script src="assets/angular-calendar/gcal.min.js"></script>
+    <script src="assets/angular-calendar/calendar.js"></script>
+    <script src="assets/angular-calendar/locale-all.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/ngstorage/0.3.10/ngStorage.min.js"></script>
+
+    <!--Load-->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/config.js"></script>
+
+    <!--Services-->
+    <script src="scripts/services/rest.service.js"></script>
+    <!--<script src="scripts/services/pager.service.js"></script>
+    <script src="scripts/services/openWindow.service.js"></script>
+    <script src="scripts/services/dateHours.service.js"></script>
+    <script src="scripts/services/agendamentoEventual.service.js"></script>-->
+    <!--Controllers-->
+    <script src="scripts/controllers/home.controller.js"></script>
+    <!--<script src="scripts/controllers/inventario.controller.js"></script>
+    <script src="scripts/controllers/agenda.controller.js"></script>
+    <script src="scripts/controllers/ensalamento.controller.js"></script>
+    <script src="scripts/controllers/visualizar-ensalamento.controller.js"></script>
+    <script src="scripts/controllers/manutencao-cadastro.controller.js"></script>
+    <script src="scripts/controllers/software.controller.js"></script>
+    <script src="scripts/controllers/modalidade.controller.js"></script>
+    <script src="scripts/controllers/usuario.controller.js"></script>
+    <script src="scripts/controllers/software-ambiente.controller.js"></script>
+    <script src="scripts/controllers/software-disciplina.controller.js"></script>
+    <script src="scripts/controllers/reports.controller.js"></script>
+    <script src="scripts/controllers/importar-softwares.controller.js"></script>-->
+    <!--Directives-->
+    <!--<script src="scripts/directives/errorModal.js"></script>
+    <script src="scripts/directives/standardInput.js"></script>
+    <script src="scripts/directives/standardComboBox.js"></script>
+    <script src="scripts/directives/standardCheckbox.js"></script>
+    <script src="scripts/directives/standardTypeahead.js"></script>
+    <script src="scripts/directives/calendario.js"></script>
+    <script src="scripts/directives/pager.js"></script>
+    <script src="scripts/directives/agendamentoEventualModal.js"></script>
+    <script src="scripts/directives/cadastroSoftwareModal.js"></script>
+    <script src="scripts/directives/vincularCursosModal.js"></script>
+    <script src="scripts/directives/cancelamentoAgEventualModal.js"></script>
+    <script src="scripts/directives/manutencaoCadastroModal.js"></script>
+    <script src="scripts/directives/cadastroModalidadeModal.js"></script>
+    <script src="scripts/directives/importarSoftwaresModal.js"></script>
+    <script src="scripts/directives/dadosCancelamentoModal.js"></script>
+    <script src="scripts/directives/loading.js"></script>
+    <script src="scripts/directives/alert.js"></script>-->
+    <!--
+    Para coletar analíticas de uso do usuário final no seu aplicativo,
+    insira o script a seguir em cada página que deseja rastrear.
+    Coloque esse código imediatamente antes de fechar a </head> marca,
+    e antes de qualquer outro script. Seus primeiros dados aparecerão
+    automaticamente em apenas alguns segundos.
+    -->
+    <!--<script ng- type="text/javascript">
+    var appInsights=window.appInsights||function(a){
+      function b(a){c[a]=function(){var b=arguments;c.queue.push(function(){c[a].apply(c,b)})}}var c={config:a},d=document,e=window;setTimeout(function(){var b=d.createElement("script");b.src=a.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js",d.getElementsByTagName("script")[0].parentNode.appendChild(b)});try{c.cookie=d.cookie}catch(a){}c.queue=[];for(var f=["Event","Exception","Metric","PageView","Trace","Dependency"];f.length;)b("track"+f.pop());if(b("setAuthenticatedUserContext"),b("clearAuthenticatedUserContext"),b("startTrackEvent"),b("stopTrackEvent"),b("startTrackPage"),b("stopTrackPage"),b("flush"),!a.disableExceptionTracking){f="onerror",b("_"+f);var g=e[f];e[f]=function(a,b,d,e,h){var i=g&&g(a,b,d,e,h);return!0!==i&&c["_"+f](a,b,d,e,h),i}}return c
+      }({
+          instrumentationKey:"734cac8c-61d1-407e-a2ad-edae28a448dc"
+      });
+
+    window.appInsights=appInsights,appInsights.queue&&0===appInsights.queue.length&&appInsights.trackPageView();
+      </script>-->
+</head>
+<body click-outside ng-controller="homeCtrl">
+    <div class="content">
+        <!--<header role="banner" ng-include src="'pages/layout/header.html'"></header>-->
+        <main role="main" ng-include src="'pages/layout/main.html'"></main>
+        <!--<footer role="contentinfo" ng-include src="'pages/layout/footer.html'"></footer>-->
+    </div>
+</body>
+</html>

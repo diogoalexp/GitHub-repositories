@@ -1,0 +1,98 @@
+﻿<nav class="navbar navbar-expand-lg bg-faded navbar-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Brand -->
+    <a class="navbar-brand positivo-logo-header" href="#!home">
+        <img src="~/../images/logoHeader.png" alt="Página inicial" class="positivo-logo" />
+    </a>
+
+    <!-- Links -->
+    <div class="collapse navbar-collapse" id="nav-content">
+        <ul class="navbar-nav mr-auto positivo-menu" ng-show="isAutenticado()">
+            <li class="nav-item">
+                <a class="nav-link" href="#!home">Home</a>
+            </li>
+            <li class="nav-item dropdown" ng-show="GetPerfil('Administrador') || GetPerfil('Gerenciador') || GetPerfil('Comum')">
+                <a class="nav-link dropdown-toggle" id="ddlMenuAgendamento" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="">
+                    Agendamento
+                </a>
+                <div class="dropdown-menu" aria-labelledby="ddlMenuAgendamento">
+                    <a class="dropdown-item" href="#!agendamento-eventual">Agendamento Eventual</a>
+                    <a class="dropdown-item" href="#!consultar-agendamento">Consultar Agendamento</a>
+                    <a class="dropdown-item" href="#!cancelar-agendamento">Cancelar Agendamento</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown" ng-show="GetPerfil('Administrador') || GetPerfil('Gerenciador')">
+                <a class="nav-link dropdown-toggle" id="ddlMenuNavegacao" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="">
+                    Cadastros
+                </a>
+                <div class="dropdown-menu" aria-labelledby="ddlMenuNavegacao">
+                    <a class="dropdown-item" href="#!manutencao-cadastro" ng-show="GetPerfil('Administrador') || GetPerfil('Gerenciador')">Manutenção de Cadastro de Usuários</a>
+                    <a class="dropdown-item" href="#!cadastro-software" ng-show="GetPerfil('Administrador')">Cadastro de Software</a>
+                    <a class="dropdown-item" href="#!cadastro-modalidade" ng-show="GetPerfil('Administrador')">Cadastro de Modalidade</a>
+                    <a class="dropdown-item" href="#!vincular-software-ambiente" ng-show="GetPerfil('Administrador') || GetPerfil('Gerenciador')">Vincular Software/Ambiente</a>
+                    <a class="dropdown-item" href="#!vincular-software-disciplina" ng-show="GetPerfil('Administrador') || GetPerfil('Gerenciador')">Vincular Software/Disciplina</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown" ng-show="GetPerfil('Administrador') || GetPerfil('Gerenciador')">
+                <a class="nav-link dropdown-toggle" id="ddlMenuImportacoes" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="">
+                    Importações
+                </a>
+                <div class="dropdown-menu" aria-labelledby="ddlMenuImportacoes">
+                    <a class="dropdown-item" href="#!importar-softwares" ng-show="GetPerfil('Administrador') || GetPerfil('Gerenciador')">Importar Softwares</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#!ensalamento">Ensalamento</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#!reports">Reports</a>
+            </li>
+        </ul>
+
+        <!-- User -->
+        <ul class="nav navbar-nav positivo-menu" ng-show="isAutenticado()">
+            <li class="nav-item dropdown">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown" id="navbarDropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="~/../images/iconuser.png" alt="Icone usuário" class="positivo-navbar-menu-usuario" />
+                    <strong>{{GetUsuario()}}</strong>
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-right positivo-menu" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-item">
+                        <div class="positivo-navbar-login">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <p class="text-left">Usuário: <strong>{{GetNome()}}</strong></p>
+                                    <!--<p class="text-left small">E-mail: email@email.com</p>-->
+                                    <!--<p>
+                                        <a href="#!error" class="btn btn-info btn-block btn-sm">Meu Perfil</a>
+                                    </p>-->
+                                    <p>
+                                        <a href="#!vincular-usuario-perfil" class="btn btn-info btn-block btn-sm" ng-show="GetPerfil('Administrador')">Perfis</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="dropdown-item">
+                        <div class="positivo-navbar-login">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <p>
+                                        <a href="#" class="btn btn-danger btn-block" ng-click="Logout()">Sair</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </li>
+        </ul>
+
+    </div>
+</nav>
