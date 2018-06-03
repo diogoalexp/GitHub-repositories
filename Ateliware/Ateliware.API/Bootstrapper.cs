@@ -1,5 +1,5 @@
 ﻿using Ateliware.Core;
-using Microsoft.Practices.Unity;
+using Ateliware.DAL;
 using Unity;
 using Unity.Lifetime;
 
@@ -25,7 +25,9 @@ namespace Ateliware.Negocio
 
         private static void RegisterTypes()
         {
-            //RegisterType<IDataContextFactory, DataContextFactory>();
+            RegisterType<IDataContextFactory, DataContextFactory>();
+            RegisterType<IRepositoryDAL, RepositoryDAL>();
+            RegisterType<IRepository, Repository>();
         }
 
         private static void RegisterType<TDef, TType>() where TType : TDef

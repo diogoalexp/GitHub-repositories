@@ -19,8 +19,9 @@ app.config(function ($routeProvider) {
             templateUrl: '~/../pages/principal/searchRepository.html',
             controller: 'repositoryCtrl as ctrl'
         })    
-        .when('/GitHub', {
-            templateUrl: '~/../scripts/directives/importarSoftwaresModal.html'
+        .when('/favoriteRepository', {
+            templateUrl: '~/../pages/principal/favoriteRepository.html',
+            controller: 'repositoryCtrl as ctrl'
         })    
         .otherwise({
             redirectTo: '/'

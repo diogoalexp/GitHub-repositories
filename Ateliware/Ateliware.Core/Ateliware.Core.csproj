@@ -40,17 +40,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Implementacoes\Response.cs" />
+    <Compile Include="Implementation\Repository.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Ateliware.DAL\Ateliware.DAL.csproj">
+      <Project>{11a10532-4338-420f-b81a-dbb48f0fb5bd}</Project>
+      <Name>Ateliware.DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Ateliware.Model\Ateliware.Model.csproj">
       <Project>{eee4a25a-a9e2-498d-918d-3bb645fc3f32}</Project>
       <Name>Ateliware.Model</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

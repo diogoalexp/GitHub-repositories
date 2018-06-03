@@ -10,7 +10,7 @@ namespace Ateliware.API.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
+            ViewBag.Title = "Ateliware API";
 
             return View();
         }

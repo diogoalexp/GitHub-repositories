@@ -1,10 +1,9 @@
 ﻿(function () {
-    app.directive('importarSoftwaresModal', function () {
+    app.directive('detailsModal', function () {
         return {
             restrict: 'E',
-            templateUrl: '~/../scripts/directives/importarSoftwaresModal.html',
+            templateUrl: '~/../scripts/directives/detailsModal.html',
             scope: {
-                stateCadastro: '=',
                 detailId: '='
             },
             controller: function ($scope, restService, $window, $localStorage) {
@@ -18,43 +17,45 @@
 
                 self.FindDetails = function (id) {
                     if ((id == null) || (id == undefined))
-                        return;
-                    self.stateEdificio = 'searching';                    
-                    self.result = null;
+                        return;                                   
+                    self.details = null;
                     restService.getURL("https://api.github.com/repositories/" + id).then(
                         function (response) {                            
-                            self.result = restService.handle(response);
-                            if (self.result) {
-                                self.FindUser(self.result.owner.url);
+                            self.details = restService.handle(response);
+                            if (self.details) {
+                                self.FindUser(self.details.owner.url);
                             } else {
-                                self.errorList = [];
+                                alert("Details not found.");
                             }
-                            window.setTimeout(function () {
-                                $scope.$apply(function () {
-                                    self.stateEdificio = 'loaded'
-                                });
-                            }, 500);
                         }, function (error) {
-                            self.stateEdificio = 'failed';
-                            if (error != null) {
-                                restService.errorMessage(error);
-                            } else {
-                                alert("Serviço Indisponível.");
-                            }
+                            alert(error);
                         });
                 }
 
                 self.FindUser = function (url) {
                     if ((url == null) || (url == undefined))
-                        return;
-                    self.stateEdificio = 'searching';
+                        return;                    
                     self.user = null;
                     restService.getURL(url).then(
                         function (response) {
                             self.user = restService.handle(response);
-
                         }, function (error) {
-                            alert('Error!');
+                            alert(error);
+                        });
+                }
+
+                self.addFavorite = function (id, name, language) {
+                    var data = {
+                        id: id,
+                        name: name,
+                        language: language
+                    };
+                    restService.post('favorites/add', data).then(
+                        function (response) {
+                            self.result = restService.handle(response);
+                            alert(self.result);
+                        }, function (error) {
+                            alert(error);
                         });
                 }
 

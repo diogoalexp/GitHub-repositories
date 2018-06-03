@@ -10,11 +10,6 @@
                     dataType: 'jsonp',
                     url: url,
                     crossDomain: true,
-                    //headers: {
-                    //    "Accept": 'text/json',
-                    //    Authorization: $http.defaults.headers.common.Authorization
-                    //},
-                    //params: params
                 }).then(function (response) {
                     deferred.resolve(response);
                 }, function (error) {
@@ -31,8 +26,7 @@
                     url: urlBase + url,
                     crossDomain: true,
                     headers: {
-                        "Accept": 'text/json',
-                       // Authorization: $http.defaults.headers.common.Authorization
+                        "Accept": 'text/json'
                     },
                     params: params
                 }).then(function (response) {
@@ -49,11 +43,7 @@
                     method: "POST",
                     contentType: "application/x-www-form-urlencoded; charset=UTF-8",
                     url: urlBase + url,
-                    data: dados,
-                    //headers: {
-                    ////    Authorization: $http.defaults.headers.common.Authorization
-                        
-                    //},
+                    data: dados
                 }).then(function (response) {
                     deferred.resolve(response);
                 }, function (error) {
@@ -73,8 +63,7 @@
             };
 
             self.errorMessage = function (error) {
-                alert('Error!');
-                
+                alert('Error!');                
             };
 
             return self;

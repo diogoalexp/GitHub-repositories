@@ -1,0 +1,52 @@
+﻿<div class="container" ng-init="FindFavorites();">
+    <nav aria-label="breadcrumb" role="navigation">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">
+                Favorites Repositories
+            </li>
+        </ol>
+    </nav>
+    <hr />
+    <div class="card" ng-if="favoriteTotal.length">
+        <div class="card-header d-flex align-items-center">
+            <h5>Resultado: {{favoriteTotal.length}} itens</h5>
+        </div>
+
+        <div class="card-body">
+            <table class="table table-responsive table-striped table-hover table-sm">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Language</th>
+                        <th>update</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr ng-repeat="a in favorite" ng-class="{'table-danger positivo-cursor-pointer': a.cancelada }">
+                        <td ng-click="detailsRepository(a.id)">{{ a.id }}</td>
+                        <td ng-click="detailsRepository(a.id)">{{ a.name }}</td>
+                        <td ng-click="detailsRepository(a.id)">{{ a.language }}</td>
+                        <td ng-click="detailsRepository(a.id)">{{ a.updatedBy }}</td>
+                        <td>
+                            <button id="btnRemover{{a.id}}"
+                                    type="button"
+                                    name="btnRemoverVinculo"
+                                    ng-click="removeFavorite(a.key)"
+                                    class="btn btn-danger btn-sm positivo-btn-remover-vinculo">
+                                <img src="~/../images/remove.png" alt="Remover Vínculo" />
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card-footer">
+            <pager total=favoriteTotal paginada=favorite state=stateAgendas></pager>
+        </div>
+    </div>
+</div>
+<details-modal detail-id=detailID></details-modal>
+

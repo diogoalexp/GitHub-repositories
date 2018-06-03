@@ -3,7 +3,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header" style="background-color: #ee2f39">
-                <h5 class="modal-title" id="exampleModalLabel">Project: {{result.full_name}}</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Project: {{details.full_name}}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -14,7 +14,7 @@
                     <table>
                         <tr>
                             <td>
-                                <img class="ateliware-portrait" src="{{result.owner.avatar_url}}" />
+                                <img class="ateliware-portrait" src="{{details.owner.avatar_url}}" />
                             </td>
                         </tr>
                         <tr>
@@ -40,25 +40,23 @@
                     </table>
                 </div>
                 <div class="ateliware-text">
-                    <p style="font-size: 20px">Project <a href="{{result.html_url}}">{{result.name}}</a></p>
-                    <label>Language {{result.language}}</label>
+                    <p style="font-size: 20px">Project <a href="{{details.html_url}}">{{details.name}}</a></p>
+                    <label>Language {{details.language}}</label>
                     <br />
-                    <label>Created: {{result.created_at}}</label>
+                    <label>Created: {{details.created_at}}</label>
                     <br />
-                    <label>Last Update: {{result.updated_at}}</label>
+                    <label>Last Update: {{details.updated_at}}</label>
                     <br />
                     <br />
-                    <p>{{result.description}}</p>
+                    <p>{{details.description}}</p>
 
                 </div>
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Fechar</button>                
+                <button type="button" class="btn btn-success btn-sm" ng-click="addFavorite(details.id, details.name, details.language)">Favorite</button>
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Fechar</button>
             </div>
         </div>
     </div>
 </div>
-
-<!-- Preloader -->
-<loading state=stateCadastro loading-spiner-css="positivo-loading-spiner"></loading>

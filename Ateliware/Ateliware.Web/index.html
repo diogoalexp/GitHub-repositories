@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
-    <title>Gerenciar Recursos</title>
-    <meta name="description" content="Gerenciador de recursos do Grupo Positivo">
+    <title>Ateliware</title>
+    <meta name="description" content="Teste prático para ateliware">
     <meta name="author" content="Diogo Pereira">
 
     <link type="image/x-icon" rel="shortcut icon" href="images/favicon.ico">
@@ -32,51 +32,17 @@
     <!--Services-->
     <script src="scripts/services/rest.service.js"></script>
     <script src="scripts/services/pager.service.js"></script>
-    <!--<script src="scripts/services/openWindow.service.js"></script>
-    <script src="scripts/services/dateHours.service.js"></script>
-    <script src="scripts/services/agendamentoEventual.service.js"></script>-->
+
     <!--Controllers-->
     <script src="scripts/controllers/home.controller.js"></script>
     <script src="scripts/controllers/repository.controller.js"></script>
 
 
-    <!--Directives-->
-    <!--<script src="scripts/directives/errorModal.js"></script>-->
+    <!--Directives-->    
     <script src="scripts/directives/pager.js"></script>
     <script src="scripts/directives/standardInput.js"></script>
-    <script src="scripts/directives/importarSoftwaresModal.js"></script>
-    <script src="scripts/directives/alert.js"></script>
-    <!--<script src="scripts/directives/standardComboBox.js"></script>
-    <script src="scripts/directives/standardCheckbox.js"></script>
-    <script src="scripts/directives/standardTypeahead.js"></script>
-    <script src="scripts/directives/calendario.js"></script>
-
-    <script src="scripts/directives/agendamentoEventualModal.js"></script>
-    <script src="scripts/directives/cadastroSoftwareModal.js"></script>
-    <script src="scripts/directives/vincularCursosModal.js"></script>
-    <script src="scripts/directives/cancelamentoAgEventualModal.js"></script>
-    <script src="scripts/directives/manutencaoCadastroModal.js"></script>
-    <script src="scripts/directives/cadastroModalidadeModal.js"></script>
-    <script src="scripts/directives/importarSoftwaresModal.js"></script>
-    <script src="scripts/directives/dadosCancelamentoModal.js"></script>
-    <script src="scripts/directives/loading.js"></script>
-    -->
-    <!--
-    Para coletar analíticas de uso do usuário final no seu aplicativo,
-    insira o script a seguir em cada página que deseja rastrear.
-    Coloque esse código imediatamente antes de fechar a </head> marca,
-    e antes de qualquer outro script. Seus primeiros dados aparecerão
-    automaticamente em apenas alguns segundos.
-    -->
-    <!--<script ng- type="text/javascript">
-    var appInsights=window.appInsights||function(a){
-      function b(a){c[a]=function(){var b=arguments;c.queue.push(function(){c[a].apply(c,b)})}}var c={config:a},d=document,e=window;setTimeout(function(){var b=d.createElement("script");b.src=a.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js",d.getElementsByTagName("script")[0].parentNode.appendChild(b)});try{c.cookie=d.cookie}catch(a){}c.queue=[];for(var f=["Event","Exception","Metric","PageView","Trace","Dependency"];f.length;)b("track"+f.pop());if(b("setAuthenticatedUserContext"),b("clearAuthenticatedUserContext"),b("startTrackEvent"),b("stopTrackEvent"),b("startTrackPage"),b("stopTrackPage"),b("flush"),!a.disableExceptionTracking){f="onerror",b("_"+f);var g=e[f];e[f]=function(a,b,d,e,h){var i=g&&g(a,b,d,e,h);return!0!==i&&c["_"+f](a,b,d,e,h),i}}return c
-      }({
-          instrumentationKey:"734cac8c-61d1-407e-a2ad-edae28a448dc"
-      });
-
-    window.appInsights=appInsights,appInsights.queue&&0===appInsights.queue.length&&appInsights.trackPageView();
-      </script>-->
+    <script src="scripts/directives/detailsModal.js"></script>
+    
 </head>
 <body click-outside ng-controller="homeCtrl" >
     <div class="content">

@@ -49,6 +49,12 @@
     <Reference Include="CommonServiceLocator, Version=2.0.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
       <HintPath>..\packages\Unity.5.2.0\lib\net45\CommonServiceLocator.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -228,7 +234,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\FavotiresController.cs" />
+    <Compile Include="Controllers\FavoritesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -309,6 +315,10 @@
     <ProjectReference Include="..\Ateliware.Core\Ateliware.Core.csproj">
       <Project>{fd79dae5-c031-4d4c-b058-8f90da7fea92}</Project>
       <Name>Ateliware.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ateliware.DAL\Ateliware.DAL.csproj">
+      <Project>{11a10532-4338-420f-b81a-dbb48f0fb5bd}</Project>
+      <Name>Ateliware.DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Ateliware.Model\Ateliware.Model.csproj">
       <Project>{eee4a25a-a9e2-498d-918d-3bb645fc3f32}</Project>
