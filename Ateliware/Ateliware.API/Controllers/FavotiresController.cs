@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GerenciarRecursos.Modelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -7,9 +8,20 @@ using System.Web.Http;
 
 namespace Ateliware.API.Controllers
 {
-    public class ValuesController : ApiController
+    public class FavotiresController : ApiController
     {
-        // GET api/values
+
+        
+        [HttpPost, Route("api/Favorites/Add")]
+        public bool Add([FromBody]EDados dados)
+        {
+            var result = dados.id;
+
+            return result > 0;
+        }
+
+
+        [HttpGet, Route("api/Favorites/Get")]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };

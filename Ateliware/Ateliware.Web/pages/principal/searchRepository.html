@@ -27,6 +27,7 @@
             <div class="float-right">
                 <button type="button" class="btn btn-info" ng-click="FindReposity()">Pesquisar</button>
                 <button type="button" class="btn btn-info" ng-click="detailsRepository(1)">modal</button>
+                <button type="button" class="btn btn-info" ng-click="favoriteRepository(1)">favorito</button>
             </div>
         </div>
     </div>
@@ -52,7 +53,6 @@
                     <tr>
                         <th>Name</th>
                         <th>Path</th>
-                        <th>Language</th>
                         <th>Description</th>
                         <th>Private</th>
                         <th>Owner</th>
@@ -63,7 +63,6 @@
                     <tr ng-repeat="a in repository" ng-class="{'table-danger positivo-cursor-pointer': a.cancelada }" ng-click="detailsRepository(a.id)">
                         <td>{{ a.name }}</td>
                         <td><a href="{{a.pathUrl}}">{{ a.path }}</a></td>
-                        <td>{{a.language}}</td>
                         <td>{{ a.description }}</td>
                         <td>{{ a.private ? 'Yes' : 'No'}}</td>
                         <td><a href="{{a.loginUrl}}">{{ a.login }}</a></td>

@@ -15,6 +15,9 @@
                 self.repository = []
                 self.repositoryTotal = []
                 self.detailID = null;
+                
+
+
                 self.openWindow = function (url) {
                     console.log(url);
                     $window.open(url);
@@ -29,20 +32,55 @@
                     self.detailID = id;
                     $('#modalImportarSoftwares').modal({ backdrop: 'static', keyboard: false });
                     $('#modalImportarSoftwares').modal('show');
+                }
 
+                self.favoriteRepository = function (id) {
+                    var data = {
+                        id: id
+                    };
+
+                    restService.post('favorites/add', data).then(
+                        function (response) {
+                            self.result = restService.handle(response);
+                            if (self.result.Status) {
+                                console.log('Alteração efetuada com sucesso.');
+                            } else {
+                                angular.forEach(response.data.Error, function (value, key) {
+                                    $window.alert(value);
+                                });
+
+                                $('#ckb' + softwareId + 'Ativo').prop('checked', 'checked');
+                            }
+                        }, function (error) {
+                            if (error != null) {
+                                restService.errorMessage(error);
+                            } else {
+                                $window.alert("Serviço Indisponível.");
+                            }
+                        });
                 }
 
 
-                self.FindReposity = function () {
-                    self.stateEdificio = 'searching';
-                    self.errorList.splice(0, self.errorList.length);
+                self.selectLanguage = function (languages_url) {
+                    restService.getURL(languages_url).then(
+                        function (response) {
+                            self.languageList = restService.handle(response);
+                            if (self.result.length > 0)
+                                return self.languageList;
+                            else
+                                return [];
+                        }, function (error) {
+                            //alert("Serviço Indisponível.");                            
+                        });
+                }
+
+                self.FindReposity = function () {                                        
                     self.result = null;
                     restService.getURL("https://api.github.com/repositories").then(
                         function (response) {
                             self.ClearRepository();
                             self.result = restService.handle(response);
-                            if (self.result.length > 0) {
-                                self.errorList = [];
+                            if (self.result.length > 0) {                                
                                 angular.forEach(self.result, function (value, key) {
                                     self.repository.push({
                                         id: value.id,
@@ -52,26 +90,14 @@
                                         description: value.description,
                                         private: value.private,
                                         login: value.owner.login,
-                                        loginUrl: value.owner.html_url,
-                                        language: value.language
+                                        loginUrl: value.owner.html_url
                                     });
                                 });
                                 self.repositoryTotal = self.repository;
-                            } else {
-                                self.errorList = [];
                             }
-                            window.setTimeout(function () {
-                                $scope.$apply(function () {
-                                    self.stateEdificio = 'loaded'
-                                });
-                            }, 500);
                         }, function (error) {
-                            self.stateEdificio = 'failed';
-                            if (error != null) {
-                                restService.errorMessage(error);
-                            } else {
-                                alert("Serviço Indisponível.");
-                            }
+                            alert("Serviço Indisponível.");
+                            self.ClearRepository();
                         });
                 }
             }]);

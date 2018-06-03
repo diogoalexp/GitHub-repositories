@@ -32,7 +32,7 @@
                     crossDomain: true,
                     headers: {
                         "Accept": 'text/json',
-                        Authorization: $http.defaults.headers.common.Authorization
+                       // Authorization: $http.defaults.headers.common.Authorization
                     },
                     params: params
                 }).then(function (response) {
@@ -50,9 +50,10 @@
                     contentType: "application/x-www-form-urlencoded; charset=UTF-8",
                     url: urlBase + url,
                     data: dados,
-                    headers: {
-                        Authorization: $http.defaults.headers.common.Authorization
-                    },
+                    //headers: {
+                    ////    Authorization: $http.defaults.headers.common.Authorization
+                        
+                    //},
                 }).then(function (response) {
                     deferred.resolve(response);
                 }, function (error) {
